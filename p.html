@@ -1,0 +1,1039 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Priyadharshan T K — UI/UX Designer Portfolio</title>
+  <meta name="description" content="Interactive UI/UX designer portfolio: case studies, process, skills, and contact." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  
+   
+
+
+     <style>
+  :root {
+    --bg: #0b0c10;
+    --panel: #111218;
+    --soft: #161823;
+    --text: #e8eaf0;
+    --muted: #a7b0c0;
+    --accent: #7c5cff;
+    --accent-2: #00e6a7;
+    --ring: color-mix(in oklab, var(--accent) 55%, white 10%);
+    --card: color-mix(in oklab, var(--panel) 90%, white 10%);
+    --radius: 18px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    --grid-gap: clamp(14px, 2vw, 24px);
+    --maxw: 1200px;
+  }
+
+  /* ---------- LIGHT THEME ---------- */
+  [data-theme="light"] {
+    --bg: #fcfcfe;
+    --panel: #ffffff;
+    --soft: #f4f6fb;
+    --text: #0b1220;
+    --muted: #5d667a;
+    --accent: #6c5ce7;
+    --accent-2: #00c2a8;
+    --ring: color-mix(in oklab, var(--accent) 45%, black 5%);
+    --card: #ffffff;
+    --shadow: 0 12px 32px rgba(11, 18, 32, 0.08);
+  }
+
+  html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* ✅ Premium patchy gradient background */
+  background:
+    radial-gradient(1000px 700px at 80% -10%, color-mix(in oklab, var(--accent) 18%, transparent 82%), transparent 70%),
+    radial-gradient(900px 600px at -10% 30%, color-mix(in oklab, var(--accent-2) 16%, transparent 84%), transparent 70%),
+    radial-gradient(700px 500px at 60% 90%, rgba(0, 255, 128, 0.12), transparent 70%),
+    linear-gradient(135deg, var(--bg), color-mix(in oklab, var(--accent) 8%, var(--bg) 92%));
+
+  color: var(--text);
+  line-height: 1.6;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.container {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding: 24px clamp(16px, 4vw, 32px);
+}
+ /* Top Nav */
+/* ---- Navbar Fixed at Top ---- */
+.nav {
+  position: fixed;          /* Fixed so it stays on top */
+  top: 0;
+  left: 0;
+  width: 100%;              /* Full width */
+  z-index: 999;             /* Ensure it’s above all content */
+  backdrop-filter: saturate(1.2) blur(8px);
+  background: color-mix(in oklab, var(--bg) 100%, transparent 0%); /* Solid, no fading */
+  border-bottom: 1px solid color-mix(in oklab, var(--text) 10%, transparent 90%);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* subtle shadow for premium look */
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px clamp(12px, 3vw, 18px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.brand .logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: conic-gradient(from 220deg, var(--accent), var(--accent-2));
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 24px color-mix(in oklab, var(--accent) 35%, transparent 65%);
+}
+
+.brand b {
+  font-family: Manrope, Inter, system-ui;
+  letter-spacing: 0.2px;
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-links a {
+  opacity: 0.9;
+}
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* Ghost Button (used in nav-cta) */
+.btn.ghost {
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  background: transparent;
+  border: 1.5px solid color-mix(in oklab, var(--text) 40%, transparent 60%);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: saturate(1.2) blur(6px);
+}
+
+/* Hover state */
+.btn.ghost:hover {
+  background: color-mix(in oklab, var(--accent) 10%, transparent 90%);
+  border-color: color-mix(in oklab, var(--accent) 60%, transparent 40%);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Active (click) state */
+.btn.ghost:active {
+  transform: scale(0.97);
+  opacity: 0.85;
+}
+
+
+
+
+
+
+
+
+/* ---- Prevent Content Overlap ---- */
+body {
+  padding-top: 72px; /* Adjust to navbar height so content doesn't hide under nav */
+}
+
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gap);
+  align-items: center;
+  padding-top: 28px;
+}
+
+.hero .copy {
+  grid-column: span 7; /* Text takes 7 columns */
+}
+
+.hero .visual {
+  grid-column: span 5; /* Photo takes 5 columns */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .visual img {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid var(--accent);
+  box-shadow: var(--shadow);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid color-mix(in oklab, var(--text) 12%, transparent 88%);
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--panel) 70%, transparent 30%);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.eyebrow i {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px color-mix(in oklab, var(--accent-2) 20%, transparent 80%);
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 3.8vw + 1rem, 4rem);
+  line-height: 1.05;
+  margin: 14px 0 10px;
+  font-family: Manrope, Inter, sans-serif;
+  letter-spacing: 0.2px;
+}
+
+.lead {
+  font-size: clamp(1rem, 1vw + 0.6rem, 1.25rem);
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+
+/* About */
+section {
+  padding: clamp(32px, 5vw, 64px) 0;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start; /* was space-between → now left aligned */
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.section-head h2 {
+  font-family: Manrope, Inter;
+  font-size: clamp(1.4rem, 2vw + .9rem, 2rem);
+  margin: 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+
+
+    /* Section base */
+section {
+  padding: clamp(32px, 5vw, 64px) 0;
+  max-width: var(--maxw);
+  margin-inline: auto; /* Centers content */
+  width: 100%;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 24px; /* a bit more breathing space */
+  flex-wrap: wrap; /* makes it responsive */
+}
+
+.section-head h2 {
+  font-family: Manrope, Inter, sans-serif;
+  font-size: clamp(1.6rem, 2vw + 1rem, 2.2rem);
+  margin: 0;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.section-head .muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+ /* Projects */
+  .grid {
+  display: grid; 
+  grid-template-columns: repeat(12, 1fr); 
+  gap: var(--grid-gap);
+}
+
+
+.card {
+  grid-column: span 4; 
+  border-radius: var(--radius); 
+  overflow: hidden; 
+  background: var(--card); 
+  border:1px solid color-mix(in oklab, var(--text) 10%, transparent 90%); 
+  box-shadow: var(--shadow); 
+  position: relative; 
+  transition: transform .18s ease, box-shadow .2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.thumb {
+  position: relative;
+  aspect-ratio: 16/10; 
+  background: linear-gradient(145deg, color-mix(in oklab, var(--accent) 16%, var(--soft) 84%), var(--soft)); 
+  overflow: hidden;
+}
+
+.thumb img.thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb .tag {
+  position: absolute; 
+  top: 10px; 
+  left: 10px; 
+  background: color-mix(in oklab, var(--bg) 65%, transparent 35%); 
+  border:1px solid color-mix(in oklab, var(--text) 12%, transparent 88%); 
+  padding: 6px 10px; 
+  border-radius: 999px; 
+  font-size: .84rem; 
+  font-weight: 700;
+}
+
+.card .body {
+  padding: 16px;
+}
+
+.card h3 {
+  margin: 0 0 4px; 
+  font-size: 1.1rem;
+}
+
+.meta {
+  font-size: .92rem; 
+  color: var(--muted);
+}
+
+.chips {
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 8px; 
+  margin-top: 12px;
+}
+
+.chip {
+  font-size: .82rem; 
+  padding: 6px 10px; 
+  border-radius: 999px; 
+  border: 1px solid color-mix(in oklab, var(--text) 12%, transparent 88%); 
+  background: color-mix(in oklab, var(--panel) 70%, transparent 30%);
+}
+
+.card .actions {
+  display: flex; 
+  gap: 10px; 
+  margin-top: 14px;
+}
+
+/* Gradient Button */
+.btn.primary {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  transition: all 0.25s ease;
+}
+
+/* Hover Effect */
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  opacity: 0.95;
+}
+
+/* Active (clicked) */
+.btn.primary:active {
+  transform: scale(0.97);
+}
+
+
+
+/* Skills */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gap);
+  max-width: var(--maxw);
+  margin-inline: auto;
+  width: 100%;
+}
+
+.skill {
+  grid-column: span 4;
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid color-mix(in oklab, var(--text) 10%, transparent 90%);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.meter {
+  height: 10px;
+  background: var(--soft);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid color-mix(in oklab, var(--text) 10%, transparent 90%);
+  margin-top: 10px;
+}
+
+.bar {
+  height: 100%;
+  width: 0; /* default (animated later) */
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 999px;
+  transition: width 1s ease-in-out; /* smooth fill animation */
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .skill {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill {
+    grid-column: span 12;
+  }
+}
+
+/* Timeline (Horizontal Card Design) */
+.timeline-container {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.timeline-card {
+  background: var(--card, #fff);
+  border-radius: 16px;
+  padding: 20px;
+  width: 220px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.timeline-icon {
+  font-size: 28px;
+  background: var(--accent, #4cafef);
+  color: #fff;
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Footer */
+    footer{border-top:1px solid color-mix(in oklab, var(--text) 10%, transparent 90%); margin-top: 28px}
+    .foot{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:18px 0; flex-wrap:wrap}
+
+ /* Contact */
+
+  :root {
+    --form-width: 280px; /* change this value anytime to adjust form width */
+  }
+
+
+  /* ===== Chips (Buttons/Links) ===== */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* reduced gap to look clean */
+    margin-top: 15px;
+  }
+
+  .chip {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--accent) 20%, transparent 80%);
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+  }
+
+  .chip:hover {
+    background: color-mix(in oklab, var(--accent) 30%, transparent 70%);
+    transform: scale(1.05);
+  }
+
+ .foot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px 0;
+  flex-wrap: wrap;
+}
+
+.back-to-top {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.back-to-top:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <body>
+  <!-- ===== Navigation ===== -->
+  <header class="nav" aria-label="Primary">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="logo" aria-hidden="true">✨</span>
+        <b>Priyadharshan T K</b>
+      </a>
+      <nav class="nav-links" aria-label="Sections">
+         <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="btn ghost" id="themeToggle" aria-pressed="false" title="Toggle theme (T)">
+          Toggle theme
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Priyadharshan T K — UI/UX Designer Portfolio</title>
+  <meta name="description" content="Interactive UI/UX designer portfolio: case studies, process, skills, and contact." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+  :root {
+    --bg: #0b0c10;
+    --panel: #111218;
+    --soft: #161823;
+    --text: #e8eaf0;
+    --muted: #a7b0c0;
+    --accent: #7c5cff;
+    --accent-2: #00e6a7;
+    --ring: color-mix(in oklab, var(--accent) 55%, white 10%);
+    --card: color-mix(in oklab, var(--panel) 90%, white 10%);
+    --radius: 18px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    --grid-gap: clamp(14px, 2vw, 24px);
+    --maxw: 1200px;
+  }
+
+  [data-theme="light"] {
+    --bg: #fcfcfe;
+    --panel: #ffffff;
+    --soft: #f4f6fb;
+    --text: #0b1220;
+    --muted: #5d667a;
+    --accent: #6c5ce7;
+    --accent-2: #00c2a8;
+    --ring: color-mix(in oklab, var(--accent) 45%, black 5%);
+    --card: #ffffff;
+    --shadow: 0 12px 32px rgba(11, 18, 32, 0.08);
+  }
+
+  html, body { height: 100%; }
+
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    background:
+      radial-gradient(1000px 700px at 80% -10%, color-mix(in oklab, var(--accent) 18%, transparent 82%), transparent 70%),
+      radial-gradient(900px 600px at -10% 30%, color-mix(in oklab, var(--accent-2) 16%, transparent 84%), transparent 70%),
+      radial-gradient(700px 500px at 60% 90%, rgba(0, 255, 128, 0.12), transparent 70%),
+      linear-gradient(135deg, var(--bg), color-mix(in oklab, var(--accent) 8%, var(--bg) 92%));
+    color: var(--text);
+    line-height: 1.6;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 72px;
+  }
+
+  .container {
+    max-width: var(--maxw);
+    margin-inline: auto;
+    padding: 24px clamp(16px, 4vw, 32px);
+  }
+
+  /* Navbar */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    z-index: 999;
+    backdrop-filter: saturate(1.2) blur(8px);
+    background: var(--bg);
+    border-bottom: 1px solid color-mix(in oklab, var(--text) 10%, transparent 90%);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 12px clamp(12px, 3vw, 18px); }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
+  .brand .logo { width: 38px; height: 38px; border-radius: 12px; background: conic-gradient(from 220deg, var(--accent), var(--accent-2)); display: grid; place-items: center; }
+  .brand b { font-family: Manrope, Inter; }
+  .nav-links { display: flex; gap: 18px; }
+  .nav-links a { color: var(--text); text-decoration: none; font-weight: 600; }
+
+  /* Hero */
+  .hero { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; padding-top: 28px; }
+  .hero .copy { flex: 1; min-width: 280px; }
+  .hero h1 { font-size: clamp(2.2rem, 3.8vw + 1rem, 4rem); font-family: Manrope, Inter; margin: 14px 0 10px; }
+  .lead { font-size: clamp(1rem, 1vw + 0.6rem, 1.25rem); color: var(--muted); max-width: 60ch; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border: 1px solid color-mix(in oklab, var(--text) 12%, transparent 88%); border-radius: 999px; font-weight: 700; font-size: 0.88rem; background: var(--soft); }
+  .eyebrow i { width: 8px; height: 8px; background: var(--accent-2); border-radius: 50%; }
+  .chips { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+  .chip { padding: 8px 14px; border-radius: 999px; background: color-mix(in oklab, var(--accent) 20%, transparent 80%); font-weight: 600; }
+
+  .photo-frame img {
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--accent);
+    box-shadow: var(--shadow);
+  }
+
+  /* Sections, Cards, Skills, Timeline, Footer → (same as before, unchanged) */
+  /* ... keep your previous CSS for work, skills, process, contact, footer ... */
+  </style>
+
+
+  <!-- ===== Hero ===== -->
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="copy">
+        <span class="eyebrow"><i></i> Available for full-time & freelance</span>
+        <h1>UI/UX Designer crafting delightful, accessible and business-ready products.</h1>
+        <p class="lead">I design interfaces that convert and experiences people love. Specialised in mobile apps,
+          dashboards and websites. End-to-end from research → wireframes → prototypes → developer-ready specs.
+        </p>
+        <div class="chips">
+          <span class="chip">UI/UX Design</span>
+          <span class="chip">Figma</span>
+          <span class="chip">Prototyping</span>
+          <span class="chip">Design Systems</span>
+        </div>
+      </div>
+      <div class="photo-frame">
+        <img src="c:\Users\dhars\Downloads\IMG_20250824_135806.jpg" alt="Priyadharshan T K">
+      </div>
+    </section>
+  </main>
+
+
+
+
+    <!-- ===== About ===== -->
+<section id="about" aria-label="About">
+  <div class="section-head">
+    <h2>About Me</h2>
+  </div>
+  <div class="grid">
+    <div class="card" style="grid-column: span 10; max-width: 800px; margin: auto;">
+      <div class="body">
+        <h3>UI/UX Designer</h3>
+        <p>
+          I create user-friendly and visually appealing app and website designs using Figma.
+          I focus on understanding user needs and translating them into clean, interactive
+          interfaces.
+        </p>
+        <ul>
+          <li>Skills: Figma, Canva, Wireframing, Prototyping</li>
+          <li>Design Focus: Mobile apps, websites, simple user interfaces</li>
+          <li>Approach: Research → Sketch → Design → Review</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- ===== Featured Work ===== -->
+    <section id="work" aria-label="Selected work">
+      <div class="section-head">
+        <h2>Selected work</h2>
+      </div>
+
+      <div class="grid" id="projectGrid">
+        <!-- Card 1 -->
+        <article class="card" data-type="app" tabindex="0" aria-labelledby="p1-title">
+          <div class="thumb">
+            <span class="tag">Dessert Items</span>
+            <a href="https://www.figma.com/design/FaHqTNvXPj3Zz40H7u12F4/ice-cream?node-id=11-88&t=qECC6UFuTuwKlApA-1" target="_blank">
+              <img src="c:/Users/dhars/Downloads/68484d65-1fe1-45c3-a81a-cb6a72ec4d4f.jpg" 
+                   alt="Ice Cream App UI" class="thumb-img" />
+            </a>
+          </div>
+          <div class="body">
+            <h3 id="p1-title">Delectable — Ice Cream Shop</h3>
+            <h3>App</h3>
+            <div class="chips">
+              <span class="chip">UI Design</span>
+              <span class="chip">Prototype</span>
+              <span class="chip">Figma</span>
+            </div>
+            <div class="actions">
+              <a class="btn primary" href="https://www.figma.com/design/FaHqTNvXPj3Zz40H7u12F4/ice-cream?node-id=11-88&t=qECC6UFuTuwKlApA-1" target="_blank">View Design</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card" data-type="app" tabindex="0" aria-labelledby="p2-title">
+          <div class="thumb">
+            <span class="tag">Juice Product</span>
+            <a href="https://www.figma.com/design/V77Ss9gDE3R5pC6GgZl0kV/juice?node-id=0-1&t=lqYACjcTw9r2Hr96-1" target="_blank">
+              <img src="c:/Users/dhars/Downloads/Group 17.png" alt="Juice App UI" class="thumb-img" />
+            </a>
+          </div>
+          <div class="body">
+            <h3 id="p2-title">Juicy — Fresh Juice Delivery App</h3>
+            <h3>App</h3>
+            <div class="chips">
+              <span class="chip">UI/UX Design</span>
+              <span class="chip">Prototype</span>
+              <span class="chip">Figma</span>
+            </div>
+            <div class="actions">
+              <a class="btn primary" href="https://www.figma.com/design/V77Ss9gDE3R5pC6GgZl0kV/juice?node-id=0-1&t=lqYACjcTw9r2Hr96-1" target="_blank">View Design</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card" data-type="app" tabindex="0" aria-labelledby="p3-title">
+          <div class="thumb">
+            <span class="tag">Soaps Product</span>
+            <a href="https://www.figma.com/proto/CYgyM4YgCeV3KsUcbSMTMX/soaps?node-id=47-14&p=f&t=sZcgisg5QaDXrGgE-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=47%3A14" target="_blank">
+              <img src="C:/Users/dhars/OneDrive/Pictures/Screenshots/Screenshot 2025-08-21 222527.png" alt="Soaps App UI" class="thumb-img" />
+            </a>
+          </div>
+          <div class="body">
+            <h3 id="p3-title">Soaps — Handmade Organic Soap Store</h3>
+            <h3>Website</h3>
+            <div class="chips">
+              <span class="chip">Product Pages</span>
+              <span class="chip">Figma</span>
+              <span class="chip">Design</span>
+            </div>
+            <div class="actions">
+              <a class="btn primary" href="https://www.figma.com/proto/CYgyM4YgCeV3KsUcbSMTMX/soaps?node-id=47-14&p=f&t=sZcgisg5QaDXrGgE-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=47%3A14" target="_blank">View Design</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card" data-type="app" tabindex="0" aria-labelledby="p4-title">
+          <div class="thumb">
+            <span class="tag">Ticket Booking App</span>
+            <a href="https://www.figma.com/design/lF78ozaIR2TfGyEuMumTSt/ticket-booking?node-id=0-1&t=ffnBt2gjmu9jFFzR-1" target="_blank">
+              <img src="c:/Users/dhars/Downloads/Cinema tickets_ movie cinema ticket icon….jpg" alt="Ticket Booking App UI" class="thumb-img" />
+            </a>
+          </div>
+          <div class="body">
+            <h3 id="p4-title">Cinema Ticket — Smart Ticket Booking App</h3>
+            <div class="chips">
+              <span class="chip">UI/UX Design</span>
+              <span class="chip">Wireframe</span>
+              <span class="chip">Figma</span>
+            </div>
+            <div class="actions">
+              <a class="btn primary" href="https://www.figma.com/design/lF78ozaIR2TfGyEuMumTSt/ticket-booking?node-id=0-1&t=ffnBt2gjmu9jFFzR-1" target="_blank">View Design</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card" data-type="app" tabindex="0" aria-labelledby="p5-title">
+          <div class="thumb">
+            <span class="tag">Toyota SUV Cars</span>
+            <a href="https://www.figma.com/design/WJz7prlXZSXzcZj22V86kq/toyota?node-id=0-1&t=vMzJMJ1etlUC0o4F-1" target="_blank">
+              <img src="c:/Users/dhars/Downloads/21cfd6b3-2d60-405f-af84-8ec5c1d36a92.jpg" alt="Toyota App UI" class="thumb-img" />
+            </a>
+          </div>
+          <div class="body">
+            <h3 id="p5-title">Toyota — Car Showcase & Design Website</h3>
+            <div class="chips">
+              <span class="chip">UI Design</span>
+              <span class="chip">Prototype</span>
+              <span class="chip">Figma</span>
+            </div>
+            <div class="actions">
+              <a class="btn primary" href="https://www.figma.com/design/WJz7prlXZSXzcZj22V86kq/toyota?node-id=0-1&t=vMzJMJ1etlUC0o4F-1" target="_blank">View Design</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Skills ===== -->
+    <section id="skills" aria-label="Skills">
+      <div class="section-head">
+        <h2>Core skills</h2>
+        <p class="muted">Tools & methods I use</p>
+      </div>
+      <div class="skills">
+        <div class="skill">
+          <h3>Figma & Prototyping</h3>
+          <div class="meter"><div class="bar" style="width:90%"></div></div>
+          <p class="muted">Auto-layout, components, variables, interactive prototypes, dev mode.</p>
+        </div>
+        <div class="skill">
+          <h3>Canva Design</h3>
+          <div class="meter"><div class="bar" style="width:80%"></div></div>
+          <p class="muted">Social media graphics, presentations, posters, branding assets, templates.</p>
+        </div>
+        <div class="skill">
+          <h3>HTML & CSS</h3>
+          <div class="meter"><div class="bar" style="width:65%"></div></div>
+          <p class="muted">Semantic HTML, responsive layouts, Flexbox, Grid, animations, and styling best practices.</p>
+        </div>
+        <div class="skill">
+          <h3>Communication</h3>
+          <div class="meter"><div class="bar" style="width:85%"></div></div>
+          <p class="muted">Presenting ideas clearly, collaborating with teams, and explaining design decisions.</p>
+        </div>
+        <div class="skill">
+          <h3>Presentation</h3>
+          <div class="meter"><div class="bar" style="width:80%"></div></div>
+          <p class="muted">Creating clear, visually appealing slides, and charts.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Process / Timeline ===== -->
+    <section id="process" aria-label="Process">
+      <div class="section-head">
+        <h2>My Process</h2>
+      </div>
+      <div class="timeline-container">
+        <div class="timeline-card">
+          <div class="timeline-icon">🔍</div>
+          <h3>Research</h3>
+          <p class="muted">Understand the user and gather inspiration for the design.</p>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-icon">✏️</div>
+          <h3>Sketch</h3>
+          <p class="muted">Draw rough ideas and plan the layout of the interface.</p>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-icon">🎨</div>
+          <h3>Design</h3>
+          <p class="muted">Create simple wireframes and prototypes using Figma or Canva.</p>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-icon">✅</div>
+          <h3>Review</h3>
+          <p class="muted">Check your design, get feedback, and make small improvements.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" aria-label="Contact">
+      <div class="section-head">
+        <h2>Contact</h2>
+      </div>
+      <div class="grid">
+        <div class="card" style="grid-column: span 10; max-height: 450px; overflow-y: auto;">
+          <div class="body">
+            <h3>Get in Touch</h3>
+            <p>Connect with me on different platforms or send me a message directly:</p>
+            <div class="chips" style="margin-top:15px">
+              <a class="chip" href="https://www.linkedin.com/in/t-k-priyadharshan-b625092b7" target="_blank" rel="noreferrer noopener">
+                LinkedIn
+              </a>
+              <a class="chip" href="mailto:tkpriyadharshan@gmail.com" target="_blank" rel="noreferrer noopener">
+                Email
+              </a>
+              <a class="chip" href="https://github.com/dharshantk-10" target="_blank" rel="noreferrer noopener">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="container">
+    <div class="foot">
+      <small class="muted">Press <b>T</b> to toggle theme</small>
+      <small class="muted" style="margin-left: 20px;">© 2025 Priyadharshan T K</small>
+      <a href="#top" class="back-to-top">Back to Top ↑</a>
+    </div>
+  </footer>
+</body>
+
+
+<script>
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+// Theme toggle button
+const themeBtn = document.getElementById('themeToggle');
+const html = document.documentElement;
+
+// Toggle function
+function toggleTheme() {
+  html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+  // update aria-pressed for accessibility
+  if (themeBtn) {
+    themeBtn.setAttribute("aria-pressed", html.dataset.theme === "dark");
+  }
+}
+
+// Click button to toggle theme
+if (themeBtn) {
+  themeBtn.addEventListener('click', toggleTheme);
+}
+
+// Press "T" key to toggle theme
+document.addEventListener('keydown', (event) => {
+  if (event.key.toLowerCase() === 't') {
+    toggleTheme();
+  }
+});
+
+
+  // Back to Top smooth scroll
+  const backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    backToTop.addEventListener('click', function (e) {
+      e.preventDefault(); // Prevent default link behavior
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+</script>
+
+</body>
+</html>
